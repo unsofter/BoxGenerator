@@ -26,6 +26,14 @@ class FefcoBox0122 extends FefcoBox0121
     }
 
     /**
+     * @description Calculate v offset
+     * @return float
+     */
+    protected function vLineOffset(): float {
+        return $this->v1 + $this->v2;
+    }
+
+    /**
      * @description Create all box's elements
      * @return void
      */
@@ -33,7 +41,6 @@ class FefcoBox0122 extends FefcoBox0121
     {
         parent::createElements();
 
-        $v2LineX = $this->v1 + $this->v2;
-        $this->creaseLayer[] = new CreaseLine($v2LineX, 0, $v2LineX, $this->W);
+        $this->creaseLayer[] = new CreaseLine($this->vLineOffset(), 0, $this->vLineOffset(), $this->boxSizes->W());
     }
 }

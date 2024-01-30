@@ -15,6 +15,8 @@ class FefcoBox0130 extends FefcoBox01NN {
 
     public function __construct(float $W, float $L, float $N)
     {
+        $this->N = $N;
+
         parent::__construct($W, $L);
     }
 
@@ -26,16 +28,16 @@ class FefcoBox0130 extends FefcoBox01NN {
     {
         parent::createElements();
 
-        $fullL = $this->L * $this->N;
+        $fullL = $this->boxSizes->L() * $this->N;
 
         $this->cutLayer[] = new CuttingLine(0, 0, $fullL, 0);
-        $this->cutLayer[] = new CuttingLine($fullL, 0, $fullL, $this->W);
-        $this->cutLayer[] = new CuttingLine($fullL, $this->W, 0, $this->W);
-        $this->cutLayer[] = new CuttingLine(0, $this->W, 0, 0);
+        $this->cutLayer[] = new CuttingLine($fullL, 0, $fullL, $this->boxSizes->W());
+        $this->cutLayer[] = new CuttingLine($fullL, $this->boxSizes->W(), 0, $this->boxSizes->W());
+        $this->cutLayer[] = new CuttingLine(0, $this->boxSizes->W(), 0, 0);
 
         for ($i = 0; $i < $this->N; $i++) {
-            $fullL = $this->L * $i;
-            $this->creaseLayer[] = new CuttingLine($fullL, 0, $fullL, $this->W);
+            $fullL = $this->boxSizes->L() * $i;
+            $this->creaseLayer[] = new CreaseLine($fullL, 0, $fullL, $this->boxSizes->W());
         }
     }
 }

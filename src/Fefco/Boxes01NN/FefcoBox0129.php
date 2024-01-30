@@ -29,6 +29,14 @@ class FefcoBox0129 extends FefcoBox0123
     }
 
     /**
+     * @description Calculate v offset
+     * @return float
+     */
+    protected function vLineOffset(): float {
+        return parent::vLineOffset() + $this->v4;
+    }
+
+    /**
      * @description Create all box's elements
      * @return void
      */
@@ -36,7 +44,6 @@ class FefcoBox0129 extends FefcoBox0123
     {
         parent::createElements();
 
-        $v2LineX = $this->v1 + $this->v2 + $this->v3 + $this->v4;
-        $this->creaseLayer[] = new PerforationLine($v2LineX, 0, $v2LineX, $this->W);
+        $this->creaseLayer[] = new PerforationLine($this->vLineOffset(), 0, $this->vLineOffset(), $this->boxSizes->W());
     }
 }

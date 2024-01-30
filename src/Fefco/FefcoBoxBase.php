@@ -3,6 +3,10 @@
 namespace Fefco;
 
 class FefcoBoxBase {
+    /**
+     * @var BoxSizes
+     */
+    protected BoxSizes $boxSizes;
 
     /**
      * @description All cutting elements
