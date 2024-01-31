@@ -2,7 +2,7 @@
 
 namespace  Fefco\Boxes01NN;
 
-use Fefco\BoxSizes;
+use Compute\BoxSizes;
 use Fefco\FefcoBoxBase;
 
 class FefcoBox01NN extends FefcoBoxBase
@@ -12,7 +12,7 @@ class FefcoBox01NN extends FefcoBoxBase
      * @param float $L
      */
     public function __construct (float $W, float $L) {
-        $this->boxSizes = new BoxSizes($W, $L);
+        parent::__construct($W, $L);
 
         $this->createElements();
     }

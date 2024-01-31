@@ -2,11 +2,19 @@
 
 namespace Fefco;
 
+use Compute\BoxSizes;
+use Compute\LinesBuilder;
+
 class FefcoBoxBase {
     /**
      * @var BoxSizes
      */
     protected BoxSizes $boxSizes;
+
+    /**
+     * @var LinesBuilder
+     */
+    protected LinesBuilder $linesBuilder;
 
     /**
      * @description All cutting elements
@@ -25,6 +33,15 @@ class FefcoBoxBase {
      * @var array
      */
     protected array $perforationLayer;
+
+    /**
+     *
+     */
+    public function __construct(float $W, float $L)
+    {
+        $this->boxSizes = new BoxSizes($W, $L);
+        $this->linesBuilder = new LinesBuilder();
+    }
 
     /**
      * @description Create all box's elements

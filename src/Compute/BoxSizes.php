@@ -1,10 +1,10 @@
 <?php
 
-namespace Fefco;
+namespace Compute;
 
 class BoxSizes {
-    const __CUTOUT_WIDTH__ = 10; // mm
-    const __GLUE_CUT_WIDTH__ = 10; // mm
+    const __CUTOUT_WIDTH__ = 10.0; // mm
+    const __GLUE_CUT_WIDTH__ = 10.0; // mm
 
     /**
      * @description W size
@@ -17,12 +17,13 @@ class BoxSizes {
     private float $L;
 
     /**
+     * @description H size
      * @var float
      */
     private float $H;
 
     /**
-     * @var float|int
+     * @var float
      */
     private float $cutOut;
 

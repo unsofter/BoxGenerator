@@ -38,6 +38,7 @@ class FefcoBox0111 extends FefcoBox0110
     {
         parent::createElements();
 
-        $this->creaseLayer[] = new CreaseLine(0, $this->v1, $this->boxSizes->L(), $this->v1);
+        $this->linesBuilder->goTo(0, $this->v1);
+        $this->creaseLayer[] = $this->linesBuilder->lineToX($this->boxSizes->L(), CreaseLine::class);
     }
 }

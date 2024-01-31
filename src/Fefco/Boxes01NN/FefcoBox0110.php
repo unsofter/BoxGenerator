@@ -13,9 +13,9 @@ class FefcoBox0110 extends FefcoBox01NN {
     {
         parent::createElements();
 
-        $this->cutLayer[] = new CuttingLine(0, 0, $this->boxSizes->L(), 0);
-        $this->cutLayer[] = new CuttingLine($this->boxSizes->L(), 0, $this->boxSizes->L(), $this->boxSizes->W());
-        $this->cutLayer[] = new CuttingLine($this->boxSizes->L(), $this->boxSizes->W(), 0, $this->boxSizes->W());
-        $this->cutLayer[] = new CuttingLine(0, $this->boxSizes->W(), 0, 0);
+        $this->cutLayer[] = $this->linesBuilder->lineToX($this->boxSizes->L(), CuttingLine::class);
+        $this->cutLayer[] = $this->linesBuilder->lineToY($this->boxSizes->W(), CuttingLine::class);
+        $this->cutLayer[] = $this->linesBuilder->lineToX((-1.0) * $this->boxSizes->L(), CuttingLine::class);
+        $this->cutLayer[] = $this->linesBuilder->lineToY((-1.0) * $this->boxSizes->W(), CuttingLine::class);
     }
 }

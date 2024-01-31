@@ -30,14 +30,14 @@ class FefcoBox0130 extends FefcoBox01NN {
 
         $fullL = $this->boxSizes->L() * $this->N;
 
-        $this->cutLayer[] = new CuttingLine(0, 0, $fullL, 0);
-        $this->cutLayer[] = new CuttingLine($fullL, 0, $fullL, $this->boxSizes->W());
-        $this->cutLayer[] = new CuttingLine($fullL, $this->boxSizes->W(), 0, $this->boxSizes->W());
-        $this->cutLayer[] = new CuttingLine(0, $this->boxSizes->W(), 0, 0);
+        $this->cutLayer[] = $this->linesBuilder->lineToX($fullL, CuttingLine::class);
+        $this->cutLayer[] = $this->linesBuilder->lineToY($this->boxSizes->W(), CuttingLine::class);
+        $this->cutLayer[] = $this->linesBuilder->lineToX((-1.0) * $fullL, CuttingLine::class);
+        $this->cutLayer[] = $this->linesBuilder->lineToY((-1.0) * $this->boxSizes->W(), CuttingLine::class);
 
         for ($i = 0; $i < $this->N; $i++) {
-            $fullL = $this->boxSizes->L() * $i;
-            $this->creaseLayer[] = new CreaseLine($fullL, 0, $fullL, $this->boxSizes->W());
+            $this->linesBuilder->goTo($this->boxSizes->L() * $i, 0);
+            $this->creaseLayer[] = $this->linesBuilder->lineToY($this->boxSizes->W(), CreaseLine::class);
         }
     }
 }
