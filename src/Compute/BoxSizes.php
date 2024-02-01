@@ -5,6 +5,7 @@ namespace Compute;
 class BoxSizes {
     const __CUTOUT_WIDTH__ = 10.0; // mm
     const __GLUE_CUT_WIDTH__ = 10.0; // mm
+    const __LINE_JUMP__ = 5.0; // mm
 
     /**
      * @description W size
@@ -33,6 +34,11 @@ class BoxSizes {
     private float $glueCut;
 
     /**
+     * @var float
+     */
+    private float $lineJump;
+
+    /**
      * @param float $W
      * @param float $L
      * @param float $H
@@ -45,6 +51,7 @@ class BoxSizes {
 
         $this->cutOut = self::__CUTOUT_WIDTH__;
         $this->glueCut = self::__GLUE_CUT_WIDTH__;
+        $this->lineJump = self::__LINE_JUMP__;
     }
 
     /**
@@ -122,9 +129,16 @@ class BoxSizes {
     /**
      * @return float
      */
-    public function glueCut()
+    public function glueCut(): float
     {
         return $this->glueCut;
     }
 
+    /**
+     * @return float
+     */
+    public function lineJump(): float
+    {
+        return $this->lineJump;
+    }
 }

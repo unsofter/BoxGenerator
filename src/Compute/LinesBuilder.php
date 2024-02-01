@@ -34,23 +34,45 @@ class LinesBuilder {
      * @param float $dX
      * @return Line
      */
-    public function lineToX(float $dX, string $lineClass): Line
+    public function lineToDX(float $dX, string $lineClass): Line
     {
-        $newX = $this->curPoint->X() + $dX;
-        $line = new $lineClass($this->curPoint->X(), $this->curPoint->Y(), $newX, $this->curPoint->Y());
-        $this->goTo($newX, $this->curPoint->Y());
-        return  $line;
+        return $this->lineToDXY($dX, 0.0, $lineClass);
     }
 
     /**
      * @param float $dY
      * @return Line
      */
-    public function lineToY(float $dY, string $lineClass): Line
+    public function lineToDY(float $dY, string $lineClass): Line
     {
+        return $this->lineToDXY(0.0, $dY, $lineClass);
+    }
+
+    /**
+     * @param float $dX
+     * @param float $dY
+     * @param string $lineClass
+     * @return Line
+     */
+    public function lineToDXY(float $dX, float $dY, string $lineClass): Line
+    {
+        $newX = $this->curPoint->X() + $dX;
         $newY = $this->curPoint->Y() + $dY;
-        $line = new $lineClass($this->curPoint->X(), $this->curPoint->Y(), $this->curPoint->X(), $newY);
-        $this->goTo($this->curPoint->X(), $newY);
+        $line = new $lineClass($this->curPoint->X(), $this->curPoint->Y(), $newX, $newY);
+        $this->goTo($newX, $newY);
+        return $line;
+    }
+
+    /**
+     * @param float $dX
+     * @param float $dY
+     * @param string $lineClass
+     * @return Line
+     */
+    public function lineTo(float $X, float $Y, string $lineClass): Line
+    {
+        $line = new $lineClass($this->curPoint->X(), $this->curPoint->Y(), $X, $Y);
+        $this->goTo($X, $Y);
         return $line;
     }
 }
