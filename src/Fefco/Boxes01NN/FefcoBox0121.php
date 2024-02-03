@@ -2,8 +2,6 @@
 
 namespace Fefco\Boxes01NN;
 
-use Elements\Lines\CreaseLine;
-
 class FefcoBox0121 extends FefcoBox0110
 {
     /**
@@ -39,6 +37,6 @@ class FefcoBox0121 extends FefcoBox0110
         parent::createElements();
 
         $this->linesBuilder->goTo($this->v1, 0);
-        $this->creaseLayer[] = $this->linesBuilder->lineToDY($this->boxSizes->W(), CreaseLine::class);
+        $this->creaseLayer[] = $this->linesBuilder->lineToDY($this->boxSizes->W());
     }
 }

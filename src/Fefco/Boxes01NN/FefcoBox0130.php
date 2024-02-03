@@ -2,9 +2,6 @@
 
 namespace Fefco\Boxes01NN;
 
-use Elements\Lines\CreaseLine;
-use Elements\Lines\CuttingLine;
-
 class FefcoBox0130 extends FefcoBox01NN {
 
     /**
@@ -30,14 +27,14 @@ class FefcoBox0130 extends FefcoBox01NN {
 
         $fullL = $this->boxSizes->L() * $this->N;
 
-        $this->cutLayer[] = $this->linesBuilder->lineToDX($fullL, CuttingLine::class);
-        $this->cutLayer[] = $this->linesBuilder->lineToDY($this->boxSizes->W(), CuttingLine::class);
-        $this->cutLayer[] = $this->linesBuilder->lineToDX((-1.0) * $fullL, CuttingLine::class);
-        $this->cutLayer[] = $this->linesBuilder->lineToDY((-1.0) * $this->boxSizes->W(), CuttingLine::class);
+        $this->cutLayer[] = $this->linesBuilder->lineToDX($fullL);
+        $this->cutLayer[] = $this->linesBuilder->lineToDY($this->boxSizes->W());
+        $this->cutLayer[] = $this->linesBuilder->lineToDX((-1.0) * $fullL);
+        $this->cutLayer[] = $this->linesBuilder->lineToDY((-1.0) * $this->boxSizes->W());
 
         for ($i = 0; $i < $this->N; $i++) {
             $this->linesBuilder->goTo($this->boxSizes->L() * $i, 0);
-            $this->creaseLayer[] = $this->linesBuilder->lineToDY($this->boxSizes->W(), CreaseLine::class);
+            $this->creaseLayer[] = $this->linesBuilder->lineToDY($this->boxSizes->W());
         }
     }
 }

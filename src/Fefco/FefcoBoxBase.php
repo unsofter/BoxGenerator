@@ -4,8 +4,9 @@ namespace Fefco;
 
 use Compute\BoxSizes;
 use Compute\LinesBuilder;
+use Export\Layers;
 
-class FefcoBoxBase {
+class FefcoBoxBase implements Layers {
     /**
      * @var BoxSizes
      */
@@ -72,4 +73,57 @@ class FefcoBoxBase {
         return "DXF{$this->W}{$this->L}";
     }
 
+    /**
+     * @return array
+     */
+    public function cutLayer(): array
+    {
+        return $this->cutLayer;
+    }
+
+    /**
+     * @return array
+     */
+    public function creaseLayer(): array
+    {
+        return $this->creaseLayer;
+    }
+
+    /**
+     * @return array
+     */
+    public function perforationLayer(): array
+    {
+        return $this->perforationLayer;
+    }
+
+    /**
+     * @return float
+     */
+    public function Length(): float
+    {
+        $length = 0.0;
+
+        foreach ($this->cutLayer() as $line)
+            $length = ($line->endPoint->X() > $length)
+                ? $line->endPoint->X()
+                : $length;
+
+        return $length;
+    }
+
+    /**
+     * @return float
+     */
+    public function Width(): float
+    {
+        $width = 0.0;
+
+        foreach ($this->cutLayer() as $line)
+            $width = ($line->endPoint->Y() > $width)
+                ? $line->endPoint->Y()
+                : $width;
+
+        return $width;
+    }
 }

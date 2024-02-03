@@ -1,8 +1,6 @@
 <?php
 
-namespace Elements\Lines;
-
-use Elements\Point;
+namespace Elements;
 
 class Line
 {

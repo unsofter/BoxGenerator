@@ -2,8 +2,6 @@
 
 namespace Fefco\Boxes01NN;
 
-use Elements\Lines\PerforationLine;
-
 class FefcoBox0129 extends FefcoBox0123
 {
     /**
@@ -44,6 +42,6 @@ class FefcoBox0129 extends FefcoBox0123
         parent::createElements();
 
         $this->linesBuilder->goTo(vLineOffset(), 0);
-        $this->creaseLayer[] = $this->linesBuilder->lineToDY($this->boxSizes->W(), PerforationLine::class);
+        $this->creaseLayer[] = $this->linesBuilder->lineToDY($this->boxSizes->W());
     }
 }

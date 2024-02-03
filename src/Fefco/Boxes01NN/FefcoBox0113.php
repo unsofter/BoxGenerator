@@ -2,8 +2,6 @@
 
 namespace Fefco\Boxes01NN;
 
-use Elements\Lines\CreaseLine;
-
 class FefcoBox0113 extends FefcoBox0112
 {
     /**

@@ -2,7 +2,6 @@
 
 namespace  Fefco\Boxes01NN;
 
-use Compute\BoxSizes;
 use Fefco\FefcoBoxBase;
 
 class FefcoBox01NN extends FefcoBoxBase
