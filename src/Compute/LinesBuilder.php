@@ -2,8 +2,8 @@
 
 namespace BoxGenerator\Compute;
 
-use Unsofter\BoxGenerator\Elements\Lines\Line;
-use Unsofter\BoxGenerator\Elements\Point;
+use BoxGenerator\Elements\Lines\Line;
+use BoxGenerator\Elements\Point;
 
 class LinesBuilder {
     /**
