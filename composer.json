@@ -1,5 +1,5 @@
 {
-  "name":"unsofter/fefco-box-generator",
+  "name":"unsofter/box-generator",
   "version":"0.0.1",
   "require":{
     "php":">=8.1.0"
