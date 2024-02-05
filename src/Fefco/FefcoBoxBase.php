@@ -1,10 +1,10 @@
 <?php
 
-namespace Unsofter\BoxGenerator\Fefco;
+namespace BoxGenerator\Fefco;
 
-use Unsofter\BoxGenerator\Compute\BoxSizes;
-use Unsofter\BoxGenerator\Compute\LinesBuilder;
-use Unsofter\BoxGenerator\Export\Layers;
+use BoxGenerator\Compute\BoxSizes;
+use BoxGenerator\Compute\LinesBuilder;
+use BoxGenerator\Export\Layers;
 
 class FefcoBoxBase implements Layers {
     /**

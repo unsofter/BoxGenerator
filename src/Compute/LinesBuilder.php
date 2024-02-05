@@ -1,6 +1,6 @@
 <?php
 
-namespace Unsofter\BoxGenerator\Compute;
+namespace BoxGenerator\Compute;
 
 use Unsofter\BoxGenerator\Elements\Lines\Line;
 use Unsofter\BoxGenerator\Elements\Point;

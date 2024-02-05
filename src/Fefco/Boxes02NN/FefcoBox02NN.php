@@ -1,8 +1,8 @@
 <?php
 
-namespace Unsofter\BoxGenerator\Fefco\Boxes02NN;
+namespace BoxGenerator\Fefco\Boxes02NN;
 
-use Unsofter\BoxGenerator\Fefco\Boxes01NN\FefcoBox01NN;
+use BoxGenerator\Fefco\Boxes01NN\FefcoBox01NN;
 
 class FefcoBox02NN extends FefcoBox01NN {
     /**

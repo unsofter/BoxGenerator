@@ -1,9 +1,9 @@
 <?php
 
-namespace Unsofter\BoxGenerator\Export\SVG;
+namespace BoxGenerator\Export\SVG;
 
-use Unsofter\BoxGenerator\Export\Export;
-use Unsofter\BoxGenerator\Export\Layers;
+use BoxGenerator\Export\Export;
+use BoxGenerator\Export\Layers;
 
 class SVG extends Export
 {

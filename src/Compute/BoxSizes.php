@@ -1,6 +1,6 @@
 <?php
 
-namespace Unsofter\BoxGenerator\Compute;
+namespace BoxGenerator\Compute;
 
 class BoxSizes {
     const __CUTOUT_WIDTH__ = 10.0; // mm
