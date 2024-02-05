@@ -1,2 +1,2 @@
-# fefco-box-generator
+# box-generator
 Box generator
