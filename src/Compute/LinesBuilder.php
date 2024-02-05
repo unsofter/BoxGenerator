@@ -2,7 +2,7 @@
 
 namespace BoxGenerator\Compute;
 
-use BoxGenerator\Elements\Lines\Line;
+use BoxGenerator\Elements\Line;
 use BoxGenerator\Elements\Point;
 
 class LinesBuilder {
