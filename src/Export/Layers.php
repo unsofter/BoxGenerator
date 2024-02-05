@@ -1,6 +1,6 @@
 <?php
 
-namespace Export;
+namespace Unsofter\BoxGenerator\Export;
 
 interface Layers
 {

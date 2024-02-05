@@ -1,9 +1,9 @@
 <?php
 
-namespace Compute;
+namespace Unsofter\BoxGenerator\Compute;
 
-use Elements\Lines\Line;
-use Elements\Point;
+use Unsofter\BoxGenerator\Elements\Lines\Line;
+use Unsofter\BoxGenerator\Elements\Point;
 
 class LinesBuilder {
     /**

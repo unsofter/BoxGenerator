@@ -1,6 +1,6 @@
 <?php
 
-namespace Elements;
+namespace Unsofter\BoxGenerator\Elements;
 
 class Line
 {
