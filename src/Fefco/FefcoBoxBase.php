@@ -105,8 +105,8 @@ class FefcoBoxBase implements Layers {
         $length = 0.0;
 
         foreach ($this->cutLayer() as $line)
-            $length = ($line->endPoint->X() > $length)
-                ? $line->endPoint->X()
+            $length = ($line->endPoint()->X() > $length)
+                ? $line->endPoint()->X()
                 : $length;
 
         return $length;
@@ -120,8 +120,8 @@ class FefcoBoxBase implements Layers {
         $width = 0.0;
 
         foreach ($this->cutLayer() as $line)
-            $width = ($line->endPoint->Y() > $width)
-                ? $line->endPoint->Y()
+            $width = ($line->endPoint()->Y() > $width)
+                ? $line->endPoint()->Y()
                 : $width;
 
         return $width;
