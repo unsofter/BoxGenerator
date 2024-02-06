@@ -39,7 +39,7 @@ class FefcoBox0112 extends FefcoBox0111
     {
         parent::createElements();
 
-        $this->linesBuilder->goTo(0, $this->vLineOffset());
+        $this->linesBuilder->goTo(0, self::vLineOffset());
         $this->creaseLayer[] = $this->linesBuilder->lineToDX($this->boxSizes->L());
     }
 }

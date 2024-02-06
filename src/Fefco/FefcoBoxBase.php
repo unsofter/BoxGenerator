@@ -5,6 +5,7 @@ namespace BoxGenerator\Fefco;
 use BoxGenerator\Compute\BoxSizes;
 use BoxGenerator\Compute\LinesBuilder;
 use BoxGenerator\Export\Layers;
+use BoxGenerator\Export\SVG\SVG;
 
 class FefcoBoxBase implements Layers {
     /**
@@ -125,5 +126,11 @@ class FefcoBoxBase implements Layers {
                 : $width;
 
         return $width;
+    }
+
+    public function __get(string $name)
+    {
+        if ($name == 'svg')
+            return SVG::toString($this);
     }
 }

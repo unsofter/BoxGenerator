@@ -33,4 +33,15 @@ class FefcoBox0123 extends FefcoBox0122
         return parent::vLineOffset() + $this->v3;
     }
 
+    /**
+     * @description Create all box's elements
+     * @return void
+     */
+    protected function createElements(): void
+    {
+        parent::createElements();
+
+        $this->linesBuilder->goTo(self::vLineOffset(), 0);
+        $this->creaseLayer[] = $this->linesBuilder->lineToDY($this->boxSizes->W());
+    }
 }

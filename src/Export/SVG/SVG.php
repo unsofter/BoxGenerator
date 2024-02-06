@@ -46,7 +46,7 @@ class SVG extends Export
 
         foreach ($creaseLayer as $creaseLine)
             $lines .= '<line x1="' . $creaseLine->startPoint()->X() . '" y1="' . $creaseLine->startPoint()->Y() .
-                '" x2="' . $creaseLine->endPoint()->X() . '" y2="' . $creaseLine->endPoint()->Y() . '" stroke="black" />' . PHP_EOL;
+                '" x2="' . $creaseLine->endPoint()->X() . '" y2="' . $creaseLine->endPoint()->Y() . '" stroke="#e7000e" />' . PHP_EOL;
 
         return $lines;
     }
