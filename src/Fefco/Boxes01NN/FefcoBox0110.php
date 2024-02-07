@@ -11,11 +11,6 @@ class FefcoBox0110 extends FefcoBox01NN {
      */
     public function __construct(float $W, float $L)
     {
-        if ($W == 0.0)
-            throw new BadRequestHttpException('W = 0?');
-        if ($L == 0.0)
-            throw new BadRequestHttpException('L = 0?');
-
         parent::__construct($W, $L);
     }
 
@@ -29,7 +24,7 @@ class FefcoBox0110 extends FefcoBox01NN {
 
         $this->cutLayer[] = $this->linesBuilder->lineToDX($this->boxSizes->L());
         $this->cutLayer[] = $this->linesBuilder->lineToDY($this->boxSizes->W());
-        $this->cutLayer[] = $this->linesBuilder->lineToDX((-1.0) * $this->boxSizes->L());
-        $this->cutLayer[] = $this->linesBuilder->lineToDY((-1.0) * $this->boxSizes->W());
+        $this->cutLayer[] = $this->linesBuilder->lineTo(0.0, $this->boxSizes->W());;
+        $this->cutLayer[] = $this->linesBuilder->lineTo(0.0, 0.0);
     }
 }

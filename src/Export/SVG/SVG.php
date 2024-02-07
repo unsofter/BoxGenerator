@@ -45,8 +45,11 @@ class SVG extends Export
         $lines = '';
 
         foreach ($creaseLayer as $creaseLine)
-            $lines .= '<line x1="' . $creaseLine->startPoint()->X() . '" y1="' . $creaseLine->startPoint()->Y() .
-                '" x2="' . $creaseLine->endPoint()->X() . '" y2="' . $creaseLine->endPoint()->Y() . '" stroke="#e7000e" />' . PHP_EOL;
+            $lines .= '<line x1="' . $creaseLine->startPoint()->X() .
+                '" y1="' . $creaseLine->startPoint()->Y() .
+                '" x2="' . $creaseLine->endPoint()->X() .
+                '" y2="' . $creaseLine->endPoint()->Y() .
+                '" stroke="#e7000e" stroke-dasharray="4 1" />' . PHP_EOL;
 
         return $lines;
     }
@@ -60,8 +63,11 @@ class SVG extends Export
         $lines = '';
 
         foreach ($perforationLayer as $perforationLine)
-            $lines .= '<line x1="' . $perforationLine->startPoint()->X() . '" y1="' . $perforationLine->startPoint()->Y() .
-                '" x2="' . $perforationLine->endPoint()->X() . '" y2="' . $perforationLine->endPoint()->Y() . '" stroke="black" />' . PHP_EOL;
+            $lines .= '<line x1="' . $perforationLine->startPoint()->X() .
+                '" y1="' . $perforationLine->startPoint()->Y() .
+                '" x2="' . $perforationLine->endPoint()->X() .
+                '" y2="' . $perforationLine->endPoint()->Y() .
+                '" stroke="black" stroke-dasharray="4 1" />' . PHP_EOL;
 
         return $lines;
     }
