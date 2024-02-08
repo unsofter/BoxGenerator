@@ -4,6 +4,7 @@ namespace BoxGenerator\Fefco;
 
 use BoxGenerator\Compute\BoxSizes;
 use BoxGenerator\Compute\LinesBuilder;
+use BoxGenerator\Export\DXF\DXF;
 use BoxGenerator\Export\Layers;
 use BoxGenerator\Export\SVG\SVG;
 
@@ -54,24 +55,6 @@ class FefcoBoxBase implements Layers {
         $this->cutLayer = [];
         $this->creaseLayer = [];
         $this->perforationLayer = [];
-    }
-
-    /**
-     * @description Create SVG
-     * @return string
-     */
-    public function SVG(): string
-    {
-        return "SVG_{$this->W}{$this->L}";
-    }
-
-    /**
-     * @description Create DXF
-     * @return string
-     */
-    public function DXF(): string
-    {
-        return "DXF{$this->W}{$this->L}";
     }
 
     /**
@@ -130,7 +113,10 @@ class FefcoBoxBase implements Layers {
 
     public function __get(string $name)
     {
-        if ($name == 'svg')
-            return SVG::toString($this);
+        return match ($name)
+        {
+            'svg' => SVG::toString($this),
+            'dxf' => DXF::toString($this)
+        };
     }
 }
